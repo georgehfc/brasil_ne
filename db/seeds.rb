@@ -24,5 +24,10 @@ puts 'Creating movies...'
              itself for a bloody, brutal fight for survival.",
              genre: ["Adventure", "Horror", "Movie"],
              image_url: '../app/assets/images/seeds/bacurau-poster.jpeg' }]
+@movies.each do |movie|
+  movie = Movie.new(movie)
+  movie.save
+  puts "Created #{movie.title}"
+end
 
 puts 'Finished!'
