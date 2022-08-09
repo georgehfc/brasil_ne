@@ -1,4 +1,11 @@
 Rails.application.routes.draw do
-  root to: "pages#home"
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+  device_for :users
+  root to: 'pages#home'
+  resources :movies do
+    resources :watchlist, only: [ :index, :show, :new, :create ]
+    collection do
+      get :highlights, :top
+    end
+  end
+  resources :watchlist, only: [ :destroy ]
 end
