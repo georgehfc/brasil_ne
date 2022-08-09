@@ -6,7 +6,7 @@ class CreateMovies < ActiveRecord::Migration[6.1]
       t.integer :duration
       t.string :location
       t.text :synopsis
-      t.string :genre
+      t.string :genre, array: true, default: []
       t.string :image_url
 
       t.timestamps

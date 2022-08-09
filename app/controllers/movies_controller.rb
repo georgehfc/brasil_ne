@@ -41,7 +41,7 @@ class MoviesController < ApplicationController
     redirect_to movies_path
   end
 
-  #TODO Collections
+  # TODO: Collections
 
   def set_movie
     @movie = Movie.find(params[:id])
