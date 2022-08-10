@@ -21,10 +21,12 @@ ActiveRecord::Schema.define(version: 2022_08_09_173120) do
     t.integer "duration"
     t.string "location"
     t.text "synopsis"
-    t.string "genre"
+    t.string "genre", default: [], array: true
     t.string "image_url"
+    t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_movies_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -37,11 +39,15 @@ ActiveRecord::Schema.define(version: 2022_08_09_173120) do
   create_table "watchlists", force: :cascade do |t|
     t.integer "rating"
     t.text "review"
+    t.bigint "user_id", null: false
     t.bigint "movie_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["movie_id"], name: "index_watchlists_on_movie_id"
+    t.index ["user_id"], name: "index_watchlists_on_user_id"
   end
 
+  add_foreign_key "movies", "users"
   add_foreign_key "watchlists", "movies"
+  add_foreign_key "watchlists", "users"
 end
