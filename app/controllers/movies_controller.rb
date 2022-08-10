@@ -10,7 +10,6 @@ class MoviesController < ApplicationController
 
   def new
     @movie = Movie.new
-    authorize @movie
   end
 
   def create
@@ -41,7 +40,6 @@ class MoviesController < ApplicationController
 
   def set_movie
     @movie = Movie.find(params[:id])
-    authorize @movie
   end
 
   def movie_params
