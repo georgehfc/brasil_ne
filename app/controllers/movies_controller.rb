@@ -1,20 +1,15 @@
 class MoviesController < ApplicationController
   # Filter
-  before_action :set_movie, only: [:show, :edit, :update, :destroy]
+  before_action :set_movie, only: [ :show, :edit, :update, :destroy ]
 
   def index
-    if params[:query].present?
-      @movies = policy_scope(Movie).search_by_location(params[:query])
-    else
-      @movies = policy_scope(Movie)
-    end
+    @movies = Movie.all
   end
 
   def show; end
 
   def new
     @movie = Movie.new
-    authorize @movie
   end
 
   def create
@@ -45,7 +40,6 @@ class MoviesController < ApplicationController
 
   def set_movie
     @movie = Movie.find(params[:id])
-    authorize @movie
   end
 
   def movie_params

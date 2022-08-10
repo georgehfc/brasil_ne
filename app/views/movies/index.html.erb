@@ -1,0 +1,6 @@
+<h2>Yet Another Movie Collection</h2>
+<% @movies.each do |movie| %>
+  <h3><strong><%= link_to movie.title, movie_path(movie) %></strong></h3>
+  <%= image_tag movie.image_url, width: "200" %>
+  <hr>
+<% end %>
