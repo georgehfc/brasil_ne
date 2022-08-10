@@ -1,13 +1,9 @@
 class MoviesController < ApplicationController
   # Filter
-  before_action :set_movie, only: [:show, :edit, :update, :destroy]
+  before_action :set_movie, only: [ :show, :edit, :update, :destroy ]
 
   def index
-    if params[:query].present?
-      @movies = policy_scope(Movie).search_by_location(params[:query])
-    else
-      @movies = policy_scope(Movie)
-    end
+    @movies = Movie.all
   end
 
   def show; end
