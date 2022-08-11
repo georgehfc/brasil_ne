@@ -21,7 +21,7 @@ ActiveRecord::Schema.define(version: 2022_08_09_173120) do
     t.integer "duration"
     t.string "location"
     t.text "synopsis"
-    t.string "genre", default: [], array: true
+    t.string "genre"
     t.string "image_url"
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
