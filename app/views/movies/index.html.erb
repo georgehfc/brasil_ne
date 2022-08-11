@@ -1,6 +1,15 @@
 <h2>Yet Another Movie Collection</h2>
-<% @movies.each do |movie| %>
-  <h3><strong><%= link_to movie.title, movie_path(movie) %></strong></h3>
-  <%= image_tag movie.image_url, width: "200" %>
-  <hr>
-<% end %>
+<div class="cards">
+  <% @movies.each do |movie| %>
+    <div class="card-movie">
+      <%= image_tag movie.image_url %>
+      <div class="card-movie-infos">
+        <div>
+          <h2><%= link_to movie.title, movie_path(movie) %></h2>
+          <p class="card-movie-year"><%= movie.year %></p>
+          <p class="card-movie-duration"><%= movie.duration %> min</p>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>

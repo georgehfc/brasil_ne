@@ -1,11 +1,11 @@
 <h2><%= @movie.title.titleize %></h2>
 <ul class="list-group list-group-flush">
   <li class="list-group-item">
-    <%= @movie.genre.join(", ") %>
+    <%= @movie.genre.join(", ").titleize %>
   </li>
   <li class="list-group-item"><%= @movie.year %></li>
   <li class="list-group-item"><%= @movie.duration %></li>
-  <li class="list-group-item"><%= @movie.location.capitalize %></li>
+  <li class="list-group-item"><%= @movie.location.titleize %></li>
   <li class="list-group-item"><%= @movie.synopsis %></li>
 </ul>
 <%= link_to "Back", "/movies" %>
