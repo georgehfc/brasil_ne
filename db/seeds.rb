@@ -18,14 +18,22 @@ puts 'Creating movies...'
              genre: ["Adventure", "Horror", "Mystery"],
              image_url: 'https://m.media-amazon.com/images/M/MV5BYjc1N2M1YjMtYzBiNi00NGFiLThkN2QtY2EwZGU5MDRkODAzXkEyXkFqcGdeQXVyMTkzODUwNzk@._V1_.jpg',
              user: severino },
-             { title: "A Dog's Will",
-               year: 2000,
-               duration: 104,
-               location: 'Cabaceiras, Paraíba',
-               synopsis: "João Grilo and Chicó are two very poor and clever Brazilian Northeasterners who struggle for survival and trick people to get by. After meeting the wealthy Rosinha, both hope to finally strive in life, but their plans are interrupted by the arrival of an outlaw.",
-               genre: ["Comedy", "Drama", "Fantasy"],
-               image_url: 'https://m.media-amazon.com/images/M/MV5BNTQwMDI4OWMtOWY3Mi00YzlmLTgzOTctOWI5NjY4ZGM0MTAzXkEyXkFqcGdeQXVyNDEyNjEzOTg@._V1_.jpg',
-               user: severino }]
+           { title: "A Dog's Will",
+             year: 2000,
+             duration: 104,
+             location: 'Cabaceiras, Paraíba',
+             synopsis: "João Grilo and Chicó are two very poor and clever Brazilian Northeasterners who struggle for survival and trick people to get by. After meeting the wealthy Rosinha, both hope to finally strive in life, but their plans are interrupted by the arrival of an outlaw.",
+             genre: ["Comedy", "Drama", "Fantasy"],
+             image_url: 'https://m.media-amazon.com/images/M/MV5BNTQwMDI4OWMtOWY3Mi00YzlmLTgzOTctOWI5NjY4ZGM0MTAzXkEyXkFqcGdeQXVyNDEyNjEzOTg@._V1_.jpg',
+             user: severino },
+           { title: 'Black God, White Devil',
+             year: 1964,
+             duration: 120,
+             location: 'Canudos, Bahia',
+             synopsis: "Fictionalized account of the adventures of hired gunman Antonio das Mortes, set against the real life last days of rural banditism. The movie follows Antonio as he witnesses the descent of common rural worker Manuel into a life of crime, joining the gang of Antonio's sworn enemy, Corisco the Blond Devil (Othon Bastos), and the Pedra Bonita Massacre.",
+             genre: ["Adventure", "Crime", "Drama"],
+             image_url: 'https://m.media-amazon.com/images/M/MV5BYTAxOWNiY2YtOWY4YS00ZWU0LTg5OWQtMmUxOWRhZjRkZThhXkEyXkFqcGdeQXVyNjA4NDY3NjA@._V1_.jpg',
+             user: severino }]
 @movies.each do |attributes|
   movie = Movie.create!(attributes)
   puts "Created #{movie.title}"
