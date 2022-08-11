@@ -32,7 +32,7 @@ puts 'Creating movies...'
              location: 'Canudos, Bahia',
              synopsis: "Fictionalized account of the adventures of hired gunman Antonio das Mortes, set against the real life last days of rural banditism. The movie follows Antonio as he witnesses the descent of common rural worker Manuel into a life of crime, joining the gang of Antonio's sworn enemy, Corisco the Blond Devil (Othon Bastos), and the Pedra Bonita Massacre.",
              genre: ["Adventure", "Crime", "Drama"],
-             image_url: 'https://m.media-amazon.com/images/M/MV5BYTAxOWNiY2YtOWY4YS00ZWU0LTg5OWQtMmUxOWRhZjRkZThhXkEyXkFqcGdeQXVyNjA4NDY3NjA@._V1_.jpg',
+             image_url: 'https://d3swacfcujrr1g.cloudfront.net/img/uploads/2016/04/Deus_e_o_diabo_cartaz.jpg',
              user: severino }]
 @movies.each do |attributes|
   movie = Movie.create!(attributes)

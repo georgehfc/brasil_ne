@@ -1,23 +1,15 @@
 <h2>Yet Another Movie Collection</h2>
-<% @movies.each do |movie| %>
-  <h3><strong><%= link_to movie.title, movie_path(movie) %></strong></h3>
-  <%= image_tag movie.image_url, width: "200" %>
-  <hr>
-<% end %>
-
-<% @movies.each do |movie| %>
-  <div class="cards">
+<div class="cards">
+  <% @movies.each do |movie| %>
     <div class="card-movie">
       <%= image_tag movie.image_url %>
       <div class="card-movie-infos">
         <div>
           <h2><%= link_to movie.title, movie_path(movie) %></h2>
-          <p>Short description here!</p>
+          <p class="card-movie-year"><%= movie.year %></p>
+          <p class="card-movie-duration"><%= movie.duration %> min</p>
         </div>
-        <p class="card-movie-year">£99.99</p>
-        <p class="card-movie-duration">£99.99</p>
-        <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
       </div>
     </div>
-  </div>
-<% end %>
+  <% end %>
+</div>
