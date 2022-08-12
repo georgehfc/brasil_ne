@@ -8,6 +8,6 @@ Rails.application.routes.draw do
     end
   end
   resources :watchlist, only: [ :destroy ]
-  get "my-watchlist", to: "watchlists#my_watchlists"
+  get "my-watchlist", to: "watchlists#my_watchlist"
   get "my-movies", to: "movies#my_movies"
 end
