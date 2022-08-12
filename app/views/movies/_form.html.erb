@@ -1,0 +1,20 @@
+<%= simple_form_for @movie do |movie| %>
+  <%= movie.input :title %>
+  <%= movie.input :year, as: :numeric %>
+  <%= movie.input :duration, as: :numeric %>
+  <%= movie.input :location %>
+  <%= movie.input :synopsis, as: :text, :input_html => { :rows => 3 } %>
+  <%= movie.input :genre, as: :check_boxes, collection: ['Comedy',
+                                                    'Fiction',
+                                                    'Documentary',
+                                                    'Action',
+                                                    'Drama',
+                                                    'Thriller',
+                                                    'Biography',
+                                                    'Kids',
+                                                    'Adventure',
+                                                    'Horror',
+                                                    'Fantasy'], include_hidden: false %>
+  <%= movie.input :image_url %>
+  <%= movie.submit %>
+<% end %>

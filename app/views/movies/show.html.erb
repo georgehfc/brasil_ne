@@ -8,4 +8,5 @@
   <li class="list-group-item"><%= @movie.location.titleize %></li>
   <li class="list-group-item"><%= @movie.synopsis %></li>
 </ul>
+<%= link_to "Add to Watchlist", new_movie_watchlist_path(@movie), class: "btn btn-primary", method: :get %>
 <%= link_to "Back", "/movies" %>

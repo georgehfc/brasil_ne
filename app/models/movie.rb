@@ -4,5 +4,6 @@ class Movie < ApplicationRecord
 
   # Validations
   validates_presence_of :title, :year, :duration, :location, :synopsis, :genre
+  serialize :genre
   has_one_attached :image, dependent: :destroy
 end

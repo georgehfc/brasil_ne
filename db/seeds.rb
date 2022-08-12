@@ -33,6 +33,14 @@ puts 'Creating movies...'
              synopsis: "Fictionalized account of the adventures of hired gunman Antonio das Mortes, set against the real life last days of rural banditism. The movie follows Antonio as he witnesses the descent of common rural worker Manuel into a life of crime, joining the gang of Antonio's sworn enemy, Corisco the Blond Devil (Othon Bastos), and the Pedra Bonita Massacre.",
              genre: ["Adventure", "Crime", "Drama"],
              image_url: 'https://d3swacfcujrr1g.cloudfront.net/img/uploads/2016/04/Deus_e_o_diabo_cartaz.jpg',
+             user: severino },
+           { title: 'Ó Pai, Ó: Look at This',
+             year: 2007,
+             duration: 96,
+             location: 'Salvador, Bahia',
+             synopsis: "During the Carnival in the historical site of Pelourinho (Salvador, Bahia, Brazil), we follow the lives of the tenants of a falling-to-pieces tenement house who try to get by using creativity, irony, humor and music.",
+             genre: ["Comedy", "Musical"],
+             image_url: 'https://mb.web.sapo.io/7b8cbc8de29e3984dbb676caad83e59e98f1543a.jpg',
              user: severino }]
 @movies.each do |attributes|
   movie = Movie.create!(attributes)
