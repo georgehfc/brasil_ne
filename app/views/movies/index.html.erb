@@ -2,15 +2,16 @@
 <p>Support text</p>
 <div class="cards">
   <% @movies.each do |movie| %>
-    <div class="card-movie">
-      <%= image_tag movie.image_url %>
-      <div class="card-movie-infos">
-        <div>
-          <h2><%= link_to movie.title, movie_path(movie) %></h2>
-          <p class="card-movie-year"><%= movie.year %></p>
-          <p class="card-movie-duration"><%= movie.duration %> min</p>
+    <%= link_to movie_path(movie) do %>
+      <div class="card-movie d-flex flex-column" style="background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, .8) 100%), url(<%= movie.image_url %>)">
+        <div class="card-movie-infos mt-auto">
+          <div>
+            <h2><%= movie.title %></h2>
+            <p class="card-movie-year"><%= movie.year %></p>
+            <p class="card-movie-duration"><%= movie.duration %> min</p>
+          </div>
         </div>
       </div>
-    </div>
+    <% end %>
   <% end %>
 </div>

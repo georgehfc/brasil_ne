@@ -1,0 +1,6 @@
+<h2>Edit this Masterpiece</h2>
+<%= render "form", movie: @movie %>
+<%= link_to "Remove this Movie",
+                        movie_path(@movie),
+                        method: :delete,
+                        data: { confirm: "Please, think twice..."} %>
