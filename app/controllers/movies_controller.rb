@@ -16,7 +16,7 @@ class MoviesController < ApplicationController
     @movie = Movie.new(movie_params)
     @movie.save
     @movie.user = User.first # CHANGE
-    if @movie.save!
+    if @movie.save
       redirect_to movie_path(@movie)
     else
       render :new
@@ -27,7 +27,7 @@ class MoviesController < ApplicationController
 
   def update
     @movie.update(movie_params)
-    redirect_to plant_path(@movie)
+    redirect_to movie_path(@movie)
   end
 
   def destroy

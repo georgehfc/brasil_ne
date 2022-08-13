@@ -14,7 +14,8 @@
                                                     'Kids',
                                                     'Adventure',
                                                     'Horror',
-                                                    'Fantasy'], include_hidden: false %>
+                                                    'Fantasy',
+                                                    'Musical'], include_hidden: false %>
   <%= movie.input :image_url %>
-  <%= movie.submit %>
+  <%= movie.submit "Confirm", class: "btn btn-primary" %>
 <% end %>
