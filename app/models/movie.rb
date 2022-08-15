@@ -5,4 +5,7 @@ class Movie < ApplicationRecord
   # Validations
   validates_presence_of :title, :year, :duration, :location, :synopsis, :genre
   serialize :genre
+
+  # Cloudinary photo
+  has_one_attached :image_url
 end

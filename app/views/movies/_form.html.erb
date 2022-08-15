@@ -16,6 +16,6 @@
                                                     'Horror',
                                                     'Fantasy',
                                                     'Musical'], include_hidden: false %>
-  <%= movie.input :image_url %>
+  <%= movie.input :image_url, as: :file %>
   <%= movie.submit "Confirm", class: "btn btn-primary" %>
 <% end %>
