@@ -6,7 +6,7 @@ Movie.destroy_all
 User.destroy_all
 Watchlist.destroy_all
 
-severino = User.create!(name: 'Severino', email: 'sev@lewagon.com')
+severino = User.create!(name: 'Severino', email: 'sev@lewagon.com', password: 123456)
 puts "User 'Severino' created"
 
 puts 'Creating movie example...'
@@ -20,7 +20,7 @@ bacurau = Movie.new(
   genre: ["Adventure", "Horror", "Mystery"],
   user: severino
 )
-file = URI.open('https://res.cloudinary.com/daxtfj13g/image/upload/v1660610396/2l92x51r65x8zfevfec0z433efr2.jpg')
+file = URI.open('https://res.cloudinary.com/daxtfj13g/image/upload/v1660690212/9hkrgscto71igb0ni85bmy2bsfso.jpg')
 bacurau.poster.attach(io: file, filename: 'bacurau.jpg', content_type: 'image/jpg')
 bacurau.save
 puts "Movie '#{bacurau.title}' created"
