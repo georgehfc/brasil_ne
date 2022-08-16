@@ -7,5 +7,5 @@ class Movie < ApplicationRecord
   serialize :genre
 
   # Cloudinary photo
-  has_one_attached :image_url
+  has_one_attached :poster
 end

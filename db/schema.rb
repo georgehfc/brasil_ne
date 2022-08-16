@@ -50,7 +50,7 @@ ActiveRecord::Schema.define(version: 2022_08_15_005033) do
     t.string "location"
     t.text "synopsis"
     t.string "genre"
-    t.string "image_url"
+    t.string "poster"
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false

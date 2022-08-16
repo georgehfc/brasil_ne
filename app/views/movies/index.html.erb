@@ -3,7 +3,7 @@
 <div class="cards">
   <% @movies.each do |movie| %>
     <%= link_to movie_path(movie) do %>
-      <div class="card-movie d-flex flex-column" style="background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, .8) 100%), url(<%= movie.image_url %>)">
+      <div class="card-movie d-flex flex-column" style="background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, .8) 100%), url(<%= cl_image_path movie.poster.key %>)">
         <div class="card-movie-infos mt-auto">
           <div>
             <h2><%= movie.title %></h2>
