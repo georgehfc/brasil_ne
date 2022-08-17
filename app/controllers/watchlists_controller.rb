@@ -10,14 +10,14 @@ class WatchlistsController < ApplicationController
   def new
     @movie = Movie.find(params[:movie_id])
     @watchlist = Watchlist.new
-    @watchlist.user = User.first # TODO: current_user
+    @watchlist.user = current_user
     @watchlist.movie = @movie
   end
 
   def create
     @watchlist = Watchlist.new(watchlist_params)
     @movie = Movie.find(params[:movie_id])
-    @watchlist.user = User.first # TODO: current_user
+    @watchlist.user = current_user
     @watchlist.movie = @movie
     if @watchlist.save!
       redirect_to my_watchlist_path
@@ -27,7 +27,7 @@ class WatchlistsController < ApplicationController
   end
 
   def my_watchlist
-    @watchlist = Watchlist.where(user: User.first) # TODO: current_user
+    @watchlist = Watchlist.where(user: current_user)
   end
 
   private
