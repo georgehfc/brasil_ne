@@ -3,12 +3,11 @@ Rails.application.routes.draw do
 
   root to: 'pages#home'
   resources :movies do
-    resources :watchlists, only: [ :index, :show, :new, :create ]
     collection do
       get :highlights, :top
     end
   end
-  resources :watchlist, only: [ :destroy ]
+  resources :watchlists, only: [ :create, :show ]
 
   get 'my-watchlist', to: 'watchlists#my_watchlist'
   get 'my-movies', to: 'movies#my_movies'
