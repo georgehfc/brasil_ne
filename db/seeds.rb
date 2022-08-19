@@ -19,7 +19,7 @@ bacurau = Movie.new(
   synopsis: "Bacurau, a small settlement in Brazil's remote backcountry, is shaken by the death of its elderly matriarch. But something strange is happening in the village, and there's little time for mourning. The water supply has been cut off, animals are stampeding through the streets, and empty coffins are turning up on the roadside. One morning, the villagers wake up to find their home has disappeared from satellite maps completely. Under threat from an unknown enemy, Bacurau braces itself for a bloody, brutal fight for survival.",
   genre: ["Adventure", "Horror", "Mystery"]
 )
-file = URI.open('https://res.cloudinary.com/daxtfj13g/image/upload/v1660946978/qyayvdqpx8eue0w1l4zj5hossm8h.jpg')
+file = URI.open('https://res.cloudinary.com/daxtfj13g/image/upload/v1660950157/aob80e4t2sdzwt7pwkfxd41hxppu.jpg')
 bacurau.poster.attach(io: file, filename: 'bacurau.jpg', content_type: 'image/jpg')
 bacurau.save
 puts "Movie '#{bacurau.title}' created"

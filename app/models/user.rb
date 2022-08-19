@@ -8,4 +8,13 @@ class User < ApplicationRecord
 
   # Validations
   validates_presence_of :name, :email
+
+  # Creates Watchlist right after User
+  after_create :create_watchlist
+
+  private
+
+  def create_watchlist
+    Watchlist.create!
+  end
 end
