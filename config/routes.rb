@@ -7,8 +7,8 @@ Rails.application.routes.draw do
       get :highlights, :top
     end
   end
-  resources :watchlists, only: [ :show, :create, :update ]
-  resources :movie_watchlists, only: [ :show, :create, :destroy ] do
+  resources :watchlists, only: [ :show, :create ]
+  resources :movie_watchlists, only: [ :show, :create, :update, :destroy ] do
     get :review
   end
 

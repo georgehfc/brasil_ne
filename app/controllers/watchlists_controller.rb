@@ -12,10 +12,4 @@ class WatchlistsController < ApplicationController
       render :new
     end
   end
-
-  private
-
-  def watchlist_params
-    # params.require(:watchlist).permit(:rating, :review)
-  end
 end
