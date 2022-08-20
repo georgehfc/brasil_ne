@@ -7,7 +7,7 @@ Rails.application.routes.draw do
       get :highlights, :top
     end
   end
-  resources :watchlists, only: [ :create, :show ]
+  resources :watchlists, only: [ :show, :create ]
 
   get 'my-watchlist', to: 'watchlists#my_watchlist'
   get 'my-movies', to: 'movies#my_movies'

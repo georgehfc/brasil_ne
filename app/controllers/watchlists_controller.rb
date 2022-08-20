@@ -1,21 +1,16 @@
 class WatchlistsController < ApplicationController
   def show
-    @watchlist = Watchlist.find(params[:id])
+    @watchlist = Watchlist.where(user: current_user)
   end
 
   def create
     @watchlist = Watchlist.new
     @watchlist.user = current_user
-    @watchlist.movie = @movie
     if @watchlist.save!
-      redirect_to my_watchlist_path
+      redirect_to movies_path
     else
       render :new
     end
-  end
-
-  def my_watchlist
-    @watchlist = Watchlist.where(user: current_user)
   end
 
   private
