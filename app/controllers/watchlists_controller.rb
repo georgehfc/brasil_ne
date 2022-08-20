@@ -7,7 +7,7 @@ class WatchlistsController < ApplicationController
     @watchlist = Watchlist.new
     @watchlist.user = current_user
     if @watchlist.save!
-      redirect_to movies_path
+      redirect_to :root
     else
       render :new
     end
