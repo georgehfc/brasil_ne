@@ -43,6 +43,17 @@ ActiveRecord::Schema.define(version: 2022_08_16_224523) do
     t.index ["blob_id", "variation_digest"], name: "index_active_storage_variant_records_uniqueness", unique: true
   end
 
+  create_table "movie_watchlists", force: :cascade do |t|
+    t.integer "rating"
+    t.text "review"
+    t.bigint "watchlist_id", null: false
+    t.bigint "movie_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["movie_id"], name: "index_movie_watchlists_on_movie_id"
+    t.index ["watchlist_id"], name: "index_movie_watchlists_on_watchlist_id"
+  end
+
   create_table "movies", force: :cascade do |t|
     t.string "title"
     t.integer "year"
@@ -69,18 +80,15 @@ ActiveRecord::Schema.define(version: 2022_08_16_224523) do
   end
 
   create_table "watchlists", force: :cascade do |t|
-    t.integer "rating"
-    t.text "review"
     t.bigint "user_id", null: false
-    t.bigint "movie_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["movie_id"], name: "index_watchlists_on_movie_id"
     t.index ["user_id"], name: "index_watchlists_on_user_id"
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
-  add_foreign_key "watchlists", "movies"
+  add_foreign_key "movie_watchlists", "movies"
+  add_foreign_key "movie_watchlists", "watchlists"
   add_foreign_key "watchlists", "users"
 end
