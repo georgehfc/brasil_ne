@@ -3,12 +3,11 @@ class MovieWatchlistsController < ApplicationController
 
   def create
     @watchlist = Watchlist.where(user: current_user)
-    @movie = Movie.find(params[:movie])
-    @movie_watchlist = MovieWatchlist.new
-    raise
-    @movie_watchlist.watchlist = @watchlist
+    @movie = Movie.find(params[:movie_id])
+    @movie_watchlist = MovieWatchlist.new(movie_watchlist_params)
+    @movie_watchlist.watchlist_id = @watchlist.ids.join
+    @movie_watchlist.movie_id = @movie.id
     @movie_watchlist.save!
-    @watchlist.movie_watchlist = @movie_watchlist
   end
 
   def update; end
@@ -16,4 +15,10 @@ class MovieWatchlistsController < ApplicationController
   def destroy; end
 
   def review; end
+
+  private
+
+  def movie_watchlist_params
+    params.permit(:watchlist_id, :movie_id)
+  end
 end
