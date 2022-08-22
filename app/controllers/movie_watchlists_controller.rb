@@ -11,6 +11,7 @@ class MovieWatchlistsController < ApplicationController
     @movie_watchlist.watchlist_id = @watchlist.ids.join
     @movie_watchlist.movie_id = @movie.id
     @movie_watchlist.save!
+    redirect_to movie_movie_watchlist_path(@movie, @movie_watchlist)
   end
 
   def update; end
