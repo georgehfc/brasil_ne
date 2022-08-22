@@ -1,4 +1,4 @@
 class MovieWatchlist < ApplicationRecord
-  belongs_to :watchlists
-  belongs_to :movies
+  belongs_to :watchlists, optional: true
+  belongs_to :movies, optional: true
 end
