@@ -15,7 +15,6 @@ class MoviesController < ApplicationController
 
   def create
     @movie = Movie.new(movie_params)
-    @movie.save
     @movie.user = current_user
     if @movie.save
       redirect_to movie_path(@movie)
