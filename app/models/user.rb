@@ -4,7 +4,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
   has_one :watchlist, dependent: :destroy
-  has_many :movies, through: :watchlist
+  has_many :movies, dependent: :destroy
 
   # Validations
   validates_presence_of :name, :email

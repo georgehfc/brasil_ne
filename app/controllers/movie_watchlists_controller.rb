@@ -5,13 +5,9 @@ class MovieWatchlistsController < ApplicationController
   end
 
   def create
-    @watchlist = Watchlist.where(user: current_user)
-    @movie = Movie.find(params[:movie_id])
-    @movie_watchlist = MovieWatchlist.new(movie_watchlist_params)
-    @movie_watchlist.watchlist_id = @watchlist.ids.join
-    @movie_watchlist.movie_id = @movie.id
-    @movie_watchlist.save!
-    redirect_to movie_movie_watchlist_path(@movie, @movie_watchlist)
+    @watchlist = current_user.watchlist
+    @movie_watchlist = MovieWatchlist.create!(movie_watchlist_params)
+    redirect_to watchlist_path(@watchlist)
   end
 
   def update; end

@@ -1,6 +1,8 @@
 class WatchlistsController < ApplicationController
   def show
-    @watchlist = Watchlist.where(user: current_user)
+    # @watchlist = Watchlist.where(user: current_user)
+    watchlist = current_user.watchlist.movie_watchlists.map(&:movie_id)
+    @movies = watchlist.collect { |index| Movie.find(index) }
   end
 
   def create
