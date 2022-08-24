@@ -8,6 +8,7 @@ class CreateMovies < ActiveRecord::Migration[6.1]
       t.text :synopsis
       t.string :genre
       t.string :poster
+      t.references :user, null: false, foreign_key: true
 
       t.timestamps
     end
