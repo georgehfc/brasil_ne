@@ -1,8 +1,5 @@
 class MovieWatchlistsController < ApplicationController
-  def show
-    movies = current_user.watchlist.movie_watchlists.map(&:movie_id)
-    @movie_watchlists = movies.collect { |index| Movie.find(index) }
-  end
+  def show; end
 
   def create
     @watchlist = current_user.watchlist
