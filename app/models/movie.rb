@@ -8,4 +8,7 @@ class Movie < ApplicationRecord
 
   # Cloudinary photo
   has_one_attached :poster
+
+  # Enum
+  # enum genre: %w[Comedy Fiction Documentary Action Drama Thriller Biography Kids Adventure Horror Fantasy Musical]
 end

@@ -1,6 +1,6 @@
 class MoviesController < ApplicationController
   # Filter
-  before_action :set_movie, only: [ :show, :edit, :update, :destroy ]
+  before_action :set_movie, only: %i[show edit update destroy]
   skip_before_action :authenticate_user!, only: :index
 
   def index

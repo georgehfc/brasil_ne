@@ -4,7 +4,7 @@ class MovieWatchlistsController < ApplicationController
   def create
     @watchlist = current_user.watchlist
     @movie_watchlist = MovieWatchlist.create!(movie_watchlist_params)
-    redirect_to watchlist_path(@watchlist)
+    redirect_to watchlists_path
   end
 
   def update; end
