@@ -1,17 +1,13 @@
 class MovieWatchlistsController < ApplicationController
-  def show; end
-
   def create
     @watchlist = current_user.watchlist
     @movie_watchlist = MovieWatchlist.create!(movie_watchlist_params)
-    redirect_to watchlists_path
+    redirect_to watchlist_path
   end
 
   def update; end
 
   def destroy; end
-
-  def review; end
 
   private
 
