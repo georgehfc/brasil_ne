@@ -1,6 +1,6 @@
 class MoviesController < ApplicationController
   # Filter
-  before_action :set_movie, only: [ :show, :edit, :update, :destroy ]
+  before_action :set_movie, only: %i[show edit update destroy]
   skip_before_action :authenticate_user!, only: :index
 
   def index
@@ -15,8 +15,8 @@ class MoviesController < ApplicationController
 
   def create
     @movie = Movie.new(movie_params)
-    # @movie.user_id = current_user.id
-    if @movie.save
+    @movie.user_id = current_user.id
+    if @movie.save!
       redirect_to movie_path(@movie)
     else
       render :new
@@ -36,6 +36,12 @@ class MoviesController < ApplicationController
   end
 
   # TODO: Collections
+
+  def highlight; end
+
+  def top; end
+
+  private
 
   def set_movie
     @movie = Movie.find(params[:id])

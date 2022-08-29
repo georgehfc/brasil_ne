@@ -15,6 +15,8 @@ class User < ApplicationRecord
   private
 
   def create_watchlist
-    self.watchlist = Watchlist.create
+    new_watchlist = Watchlist.new
+    new_watchlist.user = self
+    new_watchlist.save!
   end
 end
