@@ -20,7 +20,7 @@ bacurau = Movie.new(
   genre: %w[Adventure Horror Mystery],
   user_id: severino.id
 )
-file = URI.open('https://res.cloudinary.com/daxtfj13g/image/upload/v1661812668/at7pbz363qmlsicx59386itrmq3n.jpg')
+file = URI.open('https://res.cloudinary.com/daxtfj13g/image/upload/v1665017951/6gveorox7n6rwefmvszbuooc7wtr.jpg')
 bacurau.poster.attach(io: file, filename: 'bacurau.jpg', content_type: 'image/jpg')
 bacurau.save!
 puts "Movie '#{bacurau.title}' created"
