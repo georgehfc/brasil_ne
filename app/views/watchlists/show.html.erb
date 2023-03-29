@@ -1,3 +1,7 @@
 <% @movies.each do |movie| %>
   <p><%= movie.title %></p>
+  <%= link_to "Remove this Movie",
+                        movie_path(movie),
+                        method: :delete,
+                        data: { confirm: "Please, think twice..."} %>
 <% end %>
